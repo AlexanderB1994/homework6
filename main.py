@@ -25,8 +25,8 @@ f2 = Fraction(3, 6)
 
 if __name__ == '__main__':
     #str
-    print(f1)
-    print(f2)
+    print(f1.numerator, f1.denominator)
+    print(f2.numerator, f2.denominator)
 
     # add
     f3 = f1 + f2
