@@ -37,6 +37,5 @@ if __name__ == '__main__':
     print(f4)
 
     # inverse
-    f5 = Fraction(3, 4)
-    f6 = f5.inverse()
-    print(f6)
+    f5 = f1.inverse()
+    print(f5)
