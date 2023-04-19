@@ -24,6 +24,7 @@ f1 = Fraction(2, 4)
 f2 = Fraction(3, 6)
 
 if __name__ == '__main__':
+    #str
     print(f1)
     print(f2)
 
