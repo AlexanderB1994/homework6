@@ -21,7 +21,7 @@ class Fraction:
 
 
 f1 = Fraction(1, 2)
-f2 = Fraction(3, 4)
+f2 = Fraction(2, 4)
 
 if __name__ == '__main__':
     # str
