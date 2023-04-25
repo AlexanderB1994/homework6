@@ -1,23 +1,41 @@
 class Fraction:
     def __init__(self, numerator, denominator):
-        self.numerator = numerator
-        self.denominator = denominator
+        self.__numerator = numerator
+        self.__denominator = denominator
 
     def __str__(self):
-        return f"{self.numerator}/{self.denominator}"
+        return f"{self.__numerator}/{self.__denominator}"
 
     def __add__(self, other):
-        new_numerator = (self.numerator * other.denominator) + (other.numerator * self.denominator)
-        new_denominator = self.denominator * other.denominator
+        new_numerator = (self.__numerator * other.__denominator) + (other.__numerator * self.__denominator)
+        new_denominator = self.__denominator * other.__denominator
         return Fraction(new_numerator, new_denominator)
 
     def __sub__(self, other):
-        new_numerator = (self.numerator * other.denominator) - (other.numerator * self.denominator)
-        new_denominator = self.denominator * other.denominator
+        new_numerator = (self.__numerator * other.__denominator) - (other.__numerator * self.__denominator)
+        new_denominator = self.__denominator * other.__denominator
         return Fraction(new_numerator, new_denominator)
 
     def inverse(self):
-        return Fraction(self.denominator, self.numerator)
+        return Fraction(self.__denominator, self.__numerator)
+
+    @property
+    def numerator(self):
+        return self.__numerator
+
+    @numerator.setter
+    def numerator(self, value):
+        self.__numerator = value
+
+    @property
+    def denominator(self):
+        return self.__denominator
+
+    @denominator.setter
+    def denominator(self, value):
+        if value == 0:
+            raise ValueError("Denominator cannot be zero")
+        self.__denominator = value
 
 
 f1 = Fraction(1, 2)
@@ -39,3 +57,9 @@ if __name__ == '__main__':
     # inverse
     f5 = f1.inverse()
     print(f5)
+
+    # accessing and modifying private attributes
+    f1.numerator = 2
+    f1.denominator = 4
+    print(f1.numerator, f1.denominator)
+
