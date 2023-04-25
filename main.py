@@ -57,9 +57,3 @@ if __name__ == '__main__':
     # inverse
     f5 = f1.inverse()
     print(f5)
-
-    # accessing and modifying private attributes
-    f1.numerator = 2
-    f1.denominator = 4
-    print(f1.numerator, f1.denominator)
-
